@@ -360,32 +360,44 @@ Synchronization can be explained as a way to organize access to shared resources
 ---
 
 ## Part 6: GitHub Repository Information
-
 **Repository URL**: 
+https://github.com/Ahad-Aldossariy-2004/OS-Assignment3-Ahad-Aldossariy.git 
 
-**Number of commits**: 
+**Number of commits**: 14
 
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+1. Change my student ID to 445052152
+2. Adding ReentrantLock and importing package
+3. Adding Semaphore and importing its package for synchronization
+4. Protecting shared variable
+(contextSwitchCount) using ReentrantLock name lock and in finally block release the lock
+5. Protect the shared variable completedProcessCount using ReentrantLock and Finally release the lock to prevent a deadlock.
+6. Protecting shared variable total Waiting Time using Reentlock
+7. Protecting executionLog
+8. Use Semaphore  to control CPU access in process execution and in final block we release the SharedResources Semaphore
+9. Apply semaphore in runToCompletion method
+10. Answering Part 1: Development Log questions
+11. Answering Part 1: Development Log questions
+12. Answering Part 3: Synchroization Analysis questions
+13. Answering Part 4: Testing Verification questions
+14. Answering Part 5: Reflection and Learning questions
 
 ---
 
 ## Summary
 
-**Total time spent on assignment**: 
+**Total time spent on assignment**: 1 day
 
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. Race conditions can lead to incorrect program behavior if not handled properly 
+2. Locks and semaphore are essential tools for ensuring thread safety 
+3. Proper synchronization improves both the correctness and reliability of concurrent programs 
 
 **Most challenging aspect**: 
-
+Understanding where race conditions occur and correctly applying synchronization without introducing
+deadlocks
 **What I'm most proud of**: 
-
+Successfully implementing synchronization mechanisms and achieving consistent, correct results across multiple executions
 ---
 
 **End of Documentation**
