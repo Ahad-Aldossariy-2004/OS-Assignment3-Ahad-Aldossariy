@@ -106,7 +106,12 @@ Compared outputs and verified correctness
 
 **Your Answer**:
 
-[Your answer here - 4-6 sentences with code examples]
+The first race condition occurs in the shared variable contextSwitchCount, where multiple threads increment the value concurrently using contextSwitchCount++. Since this operation is not atomic, threads may overwrite each other's updates, leading to incorrect counts.
+
+The second race condition occurs in executionLog, which is implemented using ArrayList. ArrayList is not thread-safe, so concurrent modifications can lead to inconsistent data or runtime exceptions.
+
+These race conditions can cause incorrect statistics and corrupted logs, affecting the correctness of the
+simulation
 
 ---
 
@@ -115,7 +120,12 @@ Compared outputs and verified correctness
 
 **Your Answer**:
 
-[Your answer here - explain your implementation choices]
+A deadlock is a situation where two or more threads are waiting indefinitely for resources held by each other.
+
+One prevention technique is using try-finally blocks to ensure that locks are always released, even if an exception occurs. Another technique is avoiding nested locks and maintaining a consistent locking order.
+
+In this assignment, try-finally was used to guarantee that locks and semaphores are released properly.
+Preventing deadlocks
 
 ---
 
@@ -124,7 +134,11 @@ Compared outputs and verified correctness
 
 **Your Answer**:
 
-[Your answer here - reference try-finally blocks, lock ordering, etc.]
+ReentrantLock is used to provide mutual exclusion, ensuring that only one thread can access a critical section at a time. In this assignment, it was used to protect shared variables such as counters and execution logs
+
+A semaphore, on the other hand, is used to control access to a limited number of resources. In this assignment, a binary semaphore (1 permit) was used to simulate CPU access, ensuring that only one process executes at a time.
+
+Thus, locks were used for data protection, while semaphores were used for resource management.
 
 ---
 
@@ -138,7 +152,11 @@ Compared outputs and verified correctness
 **Your Answer**:
 
 [Your answer here - explain coarse-grained vs fine-grained locking, independence of counters, concurrency implications. Show understanding of when to use each approach. 5-8 sentences expected.]
+I used a single lock (coarse-grained locking) to protect all shared counters. This approach simplifies implementation and reduces the risk of deadlocks.
 
+The trade-off is reduced concurrency compared to fine-grained locking, where separate locks could allow multiple threads to update different counters simultaneously.
+
+However, given the simplicity of the assignment and the small number of shared variables, coarse-grained locking is more suitable and easier to maintain
 ---
 
 ## Part 3: Synchronization Analysis (1 mark)
